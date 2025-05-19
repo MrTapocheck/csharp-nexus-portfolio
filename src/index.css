@@ -7,25 +7,25 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 212 100% 59%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 156 100% 50%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 156 100% 50%;
-    --accent-foreground: 240 5.9% 10%;
+    --background: 330 15% 6%;
+    --foreground: 330 10% 95%;
+    --card: 330 15% 6%;
+    --card-foreground: 330 10% 95%;
+    --popover: 330 15% 6%;
+    --popover-foreground: 330 10% 95%;
+    --primary: 326 100% 68%;
+    --primary-foreground: 330 10% 95%;
+    --secondary: 280 75% 76%;
+    --secondary-foreground: 330 15% 10%;
+    --muted: 330 15% 15%;
+    --muted-foreground: 330 10% 70%;
+    --accent: 280 75% 76%;
+    --accent-foreground: 330 15% 10%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 212 100% 59%;
+    --destructive-foreground: 330 10% 95%;
+    --border: 330 15% 15%;
+    --input: 330 15% 15%;
+    --ring: 326 100% 68%;
     --radius: 0.5rem;
   }
 }
@@ -53,21 +53,21 @@
 
   /* Текстовый выбор */
   ::selection {
-    @apply bg-neon-blue/25 text-white;
+    @apply bg-neon-pink/25 text-white;
   }
 }
 
 @layer components {
-  .neon-text-blue {
-    @apply text-neon-blue drop-shadow-[0_0_5px_rgba(46,137,255,0.5)];
+  .neon-text-pink {
+    @apply text-neon-pink drop-shadow-[0_0_5px_rgba(217,70,239,0.5)];
   }
   
-  .neon-text-green {
-    @apply text-neon-green drop-shadow-[0_0_5px_rgba(0,255,136,0.5)];
+  .neon-text-purple {
+    @apply text-neon-purple drop-shadow-[0_0_5px_rgba(155,135,245,0.5)];
   }
 
   .neon-border {
-    @apply border border-neon-blue shadow-[0_0_10px_rgba(46,137,255,0.3)];
+    @apply border border-neon-pink shadow-[0_0_10px_rgba(217,70,239,0.3)];
   }
 
   .glass-card {
@@ -75,7 +75,7 @@
   }
 
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16;
   }
 
   .page-container {

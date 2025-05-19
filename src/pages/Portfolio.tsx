@@ -4,6 +4,8 @@ import ParticlesBackground from '@/components/layout/ParticlesBackground';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { cn } from '@/lib/utils';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 type ProjectTag = 'C#' | '.NET' | 'ASP.NET' | 'Azure' | 'Microservices' | 'WPF' | 'EntityFramework';
 
@@ -82,16 +84,16 @@ const Portfolio: React.FC = () => {
       <ParticlesBackground />
       <Navbar />
       <main className="pt-24 pb-20">
-        <div className="container max-w-7xl mx-auto px-4">
-          <div className="mb-12">
+        <div className="container max-w-5xl mx-auto px-4">
+          <div className="mb-10 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Портфолио</h1>
-            <p className="text-xl text-gray-300 max-w-3xl">
-              Избранные проекты, которые демонстрируют мой опыт в разработке надёжных и масштабируемых решений на C# и .NET
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Избранные проекты, которые демонстрируют мой опыт в разработке на C# и .NET
             </p>
           </div>
           
           {/* Фильтр по тегам */}
-          <div className="mb-10 flex flex-wrap gap-2">
+          <div className="mb-8 flex flex-wrap justify-center gap-2">
             <TagButton 
               active={activeTag === 'all'}
               onClick={() => setActiveTag('all')}
@@ -111,7 +113,7 @@ const Portfolio: React.FC = () => {
           </div>
           
           {/* Сетка проектов */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {filteredProjects.map(project => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -134,7 +136,7 @@ const TagButton: React.FC<{
       className={cn(
         "px-4 py-2 rounded-full text-sm transition-all",
         active
-          ? "bg-neon-blue text-white"
+          ? "bg-neon-pink text-white"
           : "bg-white/5 hover:bg-white/10"
       )}
     >
@@ -145,7 +147,7 @@ const TagButton: React.FC<{
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
-    <div className="bg-black/30 backdrop-blur-sm rounded-lg overflow-hidden border border-white/5 hover:border-neon-blue/50 transition-all group">
+    <Card className="overflow-hidden border-white/5 hover:border-neon-pink/30 transition-all bg-black/30 backdrop-blur-sm">
       <div className="h-48 overflow-hidden">
         <img 
           src={project.image} 
@@ -154,28 +156,29 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         />
       </div>
       
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-400 mb-4">{project.description}</p>
+      <CardContent className="p-4">
+        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+        <p className="text-gray-400 mb-4 text-sm">{project.description}</p>
         
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-1.5 mb-4">
           {project.tags.map(tag => (
-            <span 
-              key={tag} 
-              className="inline-block px-2 py-1 text-xs bg-white/5 rounded-md"
+            <Badge 
+              key={tag}
+              variant="outline"
+              className="bg-white/5 hover:bg-white/10 text-xs"
             >
               {tag}
-            </span>
+            </Badge>
           ))}
         </div>
         
-        <div className="flex space-x-3">
+        <div className="flex space-x-3 text-sm">
           {project.link && (
             <a 
               href={project.link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-sm text-neon-blue hover:text-neon-blue/80 transition-colors"
+              className="text-neon-pink hover:text-neon-pink/80 transition-colors"
             >
               Открыть проект
             </a>
@@ -186,14 +189,14 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               href={project.githubLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-sm text-gray-400 hover:text-white transition-colors"
+              className="text-gray-400 hover:text-white transition-colors"
             >
               GitHub
             </a>
           )}
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

@@ -17,7 +17,7 @@ const ParticlesBackground: React.FC = () => {
       options={{
         background: {
           color: {
-            value: '#121212',
+            value: '#1A1A1A',
           },
         },
         fpsLimit: 60,
@@ -35,7 +35,7 @@ const ParticlesBackground: React.FC = () => {
           },
           modes: {
             push: {
-              quantity: 4,
+              quantity: 3,
             },
             repulse: {
               distance: 100,
@@ -45,13 +45,13 @@ const ParticlesBackground: React.FC = () => {
         },
         particles: {
           color: {
-            value: ["#2e89ff", "#00ff88"],
+            value: ["#D946EF", "#9b87f5"],
           },
           links: {
-            color: "#2e89ff",
+            color: "#D946EF",
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.4,
             width: 1,
           },
           collisions: {
@@ -64,7 +64,7 @@ const ParticlesBackground: React.FC = () => {
               default: "bounce",
             },
             random: true,
-            speed: 1,
+            speed: 0.8,
             straight: false,
           },
           number: {
@@ -72,16 +72,16 @@ const ParticlesBackground: React.FC = () => {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 60,
           },
           opacity: {
-            value: 0.5,
+            value: 0.4,
           },
           shape: {
             type: "circle",
           },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 1, max: 4 },
           },
         },
         detectRetina: true,

@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
           {/* Логотип */}
           <Link 
             to="/" 
-            className="text-2xl font-mono font-bold neon-text-blue"
+            className="text-2xl font-mono font-bold neon-text-pink"
           >
             SENIOR<span className="text-white">.CS</span>
           </Link>
@@ -154,7 +154,7 @@ const Navbar: React.FC = () => {
                   className={cn(
                     "px-4 py-2 rounded-md",
                     location.pathname === item.href 
-                      ? "bg-neon-blue/10 text-neon-blue" 
+                      ? "bg-neon-pink/10 text-neon-pink" 
                       : "hover:bg-white/5"
                   )}
                   onClick={() => setMobileMenuOpen(false)}
@@ -207,13 +207,13 @@ const NavLink: React.FC<{
       className={cn(
         "px-4 py-2 rounded-md relative group",
         isActive 
-          ? "text-neon-blue" 
+          ? "text-neon-pink" 
           : "hover:bg-white/5"
       )}
     >
       <span>{children}</span>
       {isActive && (
-        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-neon-blue animate-pulse-glow" />
+        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-neon-pink animate-pulse-glow" />
       )}
     </Link>
   );
